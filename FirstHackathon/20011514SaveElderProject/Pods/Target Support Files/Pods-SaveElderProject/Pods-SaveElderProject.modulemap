@@ -1,0 +1,6 @@
+framework module Pods_SaveElderProject {
+  umbrella header "Pods-SaveElderProject-umbrella.h"
+
+  export *
+  module * { export * }
+}
