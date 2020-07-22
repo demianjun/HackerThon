@@ -1,6 +1,0 @@
-framework module Pods_200131_SecondHackaThon {
-  umbrella header "Pods-200131_SecondHackaThon-umbrella.h"
-
-  export *
-  module * { export * }
-}

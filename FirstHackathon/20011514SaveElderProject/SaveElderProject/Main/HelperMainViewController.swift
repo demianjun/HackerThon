@@ -61,9 +61,6 @@ class HelperMainViewController: UIViewController, CLLocationManagerDelegate {
         afterLoginDataSave()
         exportPhoneNumber()
 
-
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -164,9 +161,6 @@ class HelperMainViewController: UIViewController, CLLocationManagerDelegate {
             
             self.present(helperVC, animated: true)
         }
-        
-        
-        
     }
     
     private func afterLoginDataSave() {
@@ -228,15 +222,11 @@ class HelperMainViewController: UIViewController, CLLocationManagerDelegate {
             accountButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -30),
             accountButton.widthAnchor.constraint(equalToConstant: 50),
             accountButton.heightAnchor.constraint(equalToConstant: 50)
-            
-            
-            
-            
         ])
         //        updateLocationButton.layer.cornerRadius = updateLocationButton.frame.width / 2
         
-        
     }
+  
     var firstDatas: [String : Any] = ["":""]
     
     @objc private func updateLocation() {
@@ -303,15 +293,11 @@ class HelperMainViewController: UIViewController, CLLocationManagerDelegate {
             let region = MKCoordinateRegion(center: elderCurrentAnnotation.coordinate, span: span)
             self.mapView.setRegion(region, animated: true)
             self.mapView.addAnnotation(elderCurrentAnnotation)
-
-
-            
         }
     }
     
     private func alertControl() {
         let alertController = UIAlertController(title: "경고", message: "피보호자가 6시간 동안\n알림을 누르지 않았습니다!", preferredStyle: .alert)
-        
         
 //        let callAction = UIAlertAction(title: "전화 걸기", style: .destructive)
         let callAction = UIAlertAction(title: "전화 걸기", style: .destructive) { alertAction in

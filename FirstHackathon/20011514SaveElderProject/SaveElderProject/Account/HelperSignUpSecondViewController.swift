@@ -20,6 +20,7 @@ class HelperSignUpSecondViewController: UIViewController {
     let failViewName = UIView()
     let failViewPhone = UIView()
     let activitiyIndicator = UIActivityIndicatorView()
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white

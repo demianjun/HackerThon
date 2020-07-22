@@ -31,6 +31,7 @@ class TimeOptionViewController: UIViewController {
     view.backgroundColor = .clear
     setUI()
   }
+  
   override func didReceiveMemoryWarning() {
     super.didReceiveMemoryWarning()
   }

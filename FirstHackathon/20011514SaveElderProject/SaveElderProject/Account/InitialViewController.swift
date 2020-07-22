@@ -16,6 +16,7 @@ class InitialViewController: UIViewController {
     let elderImg = UIImageView()
     var helperLabel = UILabel()
     var elderLabel = UILabel()
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -52,6 +53,7 @@ class InitialViewController: UIViewController {
         dismissButton.addTarget(self, action: #selector(didTapDismiss(_:)), for: .touchUpInside)
         
     }
+  
     @objc private func didTapDismiss(_ sender: UIButton) {
         dismiss(animated: true)
     }
@@ -59,26 +61,35 @@ class InitialViewController: UIViewController {
     private func setupUI() {
         helperView.shadow()
         helperView.backgroundColor = .white
+      
         elderView.shadow()
         elderView.backgroundColor = .white
+      
         helperBtn = self.btnStyle(title: "보호자 회원가입")
         helperBtn.backgroundColor = UIColor(named: "mypink")
         helperBtn.addTarget(self, action: #selector(helperBtnAction), for: .touchUpInside)
+      
         elderBtn = self.btnStyle(title: "피보호자 회원가입")
         elderBtn.backgroundColor = UIColor(named: "mypink")
         elderBtn.addTarget(self, action: #selector(elderBtnAction(_:)), for: .touchUpInside)
+      
 //        helperImg.backgroundColor = .lightGray
         helperImg.image = UIImage(named: "helper")
+      
         helperLabel = self.labelStyle()
         helperLabel.text = "항상 같은 공간에 있지 않아도 \n피보호자의 정보를 확인 하세요"
+      
         elderImg.image = UIImage(named: "elder")
         elderLabel = self.labelStyle()
         elderLabel.text = "보호자에게 위치를 전송해서 \n혹시 모를 상황을 대비하세요"
+      
         [helperView, helperBtn, elderView, elderBtn, helperImg, helperLabel, elderImg, elderLabel].forEach {
             view.addSubview($0)
         }
+      
         setupConstraint()
     }
+  
     private func setupConstraint() {
         let guide = self.view.safeAreaLayoutGuide
         helperView.translatesAutoresizingMaskIntoConstraints = false
@@ -134,6 +145,7 @@ class InitialViewController: UIViewController {
             elderLabel.centerXAnchor.constraint(equalTo: elderView.centerXAnchor, constant: 0)
         ])
     }
+  
     private func btnStyle(title: String) -> UIButton { // 버튼 스타일 함수
         let button = UIButton()
         button.setTitle(title, for: .normal)
@@ -143,17 +155,20 @@ class InitialViewController: UIViewController {
         button.shadow()
         return button
     }
+  
     private func labelStyle() -> UILabel { // 라벨 스타일 함수
         let label = UILabel()
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 20, weight: .regular)
         return label
     }
+  
     @objc private func helperBtnAction(_ sender: UIButton) {
         let helperSignUpVC = HelperSignUpViewController()
         helperSignUpVC.modalPresentationStyle = .fullScreen
         present(helperSignUpVC, animated: true)
     }
+  
     @objc private func elderBtnAction(_ sneder:UIButton) {
        let elderSignUpVC = ElderSignUpViewController()
         elderSignUpVC.modalPresentationStyle = .fullScreen

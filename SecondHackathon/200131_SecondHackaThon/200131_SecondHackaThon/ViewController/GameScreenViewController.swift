@@ -75,7 +75,7 @@ class GameScreenViewController: UIViewController {
     collectionVeiw.backgroundColor = .clear
     collectionVeiw.dataSource = self
     collectionVeiw.delegate = self
-  collectionVeiw.allowsMultipleSelection = true
+    collectionVeiw.allowsMultipleSelection = true
     AnswerCheck.randomImages()
     AnswerCheck.checkCombination()
     view.addSubview(collectionVeiw)

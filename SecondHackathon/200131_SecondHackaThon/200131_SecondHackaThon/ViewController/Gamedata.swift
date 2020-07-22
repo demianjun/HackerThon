@@ -33,7 +33,7 @@ class Gamedata {
       .child("10")
       .observeSingleEvent(of: .value) { (snapshot) in
         guard let normal_10 = snapshot.value as? [String: Int] else { return print("normal 10 return")}
-//        let normal_10Rank = normal_10.sorted { $0.value > $1.value }
+        //        let normal_10Rank = normal_10.sorted { $0.value > $1.value }
         Gamedata.normal_10Rank = normal_10.sorted { $0.value > $1.value }
     }
     
@@ -42,7 +42,7 @@ class Gamedata {
       .child("60")
       .observeSingleEvent(of: .value) { (snapshot) in
         guard let normal_60 = snapshot.value as? [String: Int] else { return print("normal 60 return")}
-//        let normal_60Rank = normal_60.sorted { $0.value > $1.value }
+        //        let normal_60Rank = normal_60.sorted { $0.value > $1.value }
         Gamedata.normal_60Rank = normal_60.sorted { $0.value > $1.value }
     }
     
@@ -51,7 +51,7 @@ class Gamedata {
       .child("120")
       .observeSingleEvent(of: .value) { (snapshot) in
         guard let normal_120 = snapshot.value as? [String: Int] else { return print("normal 120 return")}
-//        let normal_120Rank = normal_120.sorted { $0.value > $1.value }
+        //        let normal_120Rank = normal_120.sorted { $0.value > $1.value }
         Gamedata.normal_120Rank = normal_120.sorted { $0.value > $1.value }
     }
     
@@ -60,7 +60,7 @@ class Gamedata {
       .child("10")
       .observeSingleEvent(of: .value) { (snapshot) in
         guard let hard_10 = snapshot.value as? [String: Int] else { return print("hard 10 return")}
-//        let hard_10Rank = hard_10.sorted { $0.value > $1.value }
+        //        let hard_10Rank = hard_10.sorted { $0.value > $1.value }
         Gamedata.hard_10Rank = hard_10.sorted { $0.value > $1.value }
         
     }
@@ -69,7 +69,7 @@ class Gamedata {
       .child("60")
       .observeSingleEvent(of: .value) { (snapshot) in
         guard let hard_60 = snapshot.value as? [String: Int] else { return print("hard 60 return")}
-//        let hard_60Rank = hard_60.sorted { $0.value > $1.value }
+        //        let hard_60Rank = hard_60.sorted { $0.value > $1.value }
         Gamedata.hard_60Rank = hard_60.sorted { $0.value > $1.value }
         
     }
@@ -78,12 +78,10 @@ class Gamedata {
       .child("Hard")
       .child("120")
       .observeSingleEvent(of: .value) { (snapshot) in
-        guard let hard_120 = snapshot.value as? [String: Int] else { return print("hard  O120 return")}
-//        let hard_120Rank = hard_120.sorted { $0.value > $1.value }
+        guard let hard_120 = snapshot.value as? [String: Int] else { return print("hard  120 return")}
+        //        let hard_120Rank = hard_120.sorted { $0.value > $1.value }
         Gamedata.hard_120Rank = hard_120.sorted { $0.value > $1.value }
-        
     }
-    
   }
 }
 

@@ -29,6 +29,7 @@ class HelperSignUpViewController: UIViewController {
     let failViewPhone = UIView()
     var centerOriginX = CGFloat()
     let activitiyIndicator = UIActivityIndicatorView()
+  
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
@@ -82,10 +83,12 @@ class HelperSignUpViewController: UIViewController {
         welcomeLabel.textColor = .black
         welcomeLabel.textAlignment = .center
         view.addSubview(welcomeLabel)
+      
         emailTextField.layer.borderColor = UIColor.gray.cgColor
         emailTextField.layer.borderWidth = 1
         emailTextField.layer.cornerRadius = 4
         emailTextField.placeholder = " 이메일을 입력해주세요."
+      
         let paddingView = UIView(frame: CGRect(x: 0, y: 0, width: 10, height: emailTextField.frame.height))
         emailTextField.leftView = paddingView
         emailTextField.leftViewMode = .always
@@ -93,9 +96,11 @@ class HelperSignUpViewController: UIViewController {
         emailTextField.autocorrectionType = .no
         emailTextField.autocapitalizationType = .none
         view.addSubview(emailTextField)
+      
         emailCheckLabel.text = "예) sky@naver.com"
         emailCheckLabel.font = UIFont(name: "Arial", size: 13)
         view.addSubview(emailCheckLabel)
+      
         passwordTextField.layer.borderColor = UIColor.gray.cgColor
         passwordTextField.layer.borderWidth = 1
         passwordTextField.layer.cornerRadius = 4
@@ -105,6 +110,7 @@ class HelperSignUpViewController: UIViewController {
         passwordTextField.leftViewMode = .always
         passwordTextField.isSecureTextEntry = true
         view.addSubview(passwordTextField)
+      
         passwordCheckLabel.text = "6자리 이상의 비밀번호를 설정해주세요."
         passwordCheckLabel.font = UIFont(name: "Arial", size: 13)
         view.addSubview(passwordCheckLabel)
@@ -122,6 +128,7 @@ class HelperSignUpViewController: UIViewController {
         nameTextField.autocorrectionType = .no
         nameTextField.autocapitalizationType = .none
         view.addSubview(nameTextField)
+      
         nameCheckLabel.text = "예) 홍길동"
         nameCheckLabel.font = UIFont(name: "Arial", size: 13)
         view.addSubview(nameCheckLabel)
@@ -166,6 +173,7 @@ class HelperSignUpViewController: UIViewController {
         phoneNumberLabel.translatesAutoresizingMaskIntoConstraints = false
         signUpButton.translatesAutoresizingMaskIntoConstraints = false
         activitiyIndicator.translatesAutoresizingMaskIntoConstraints = false
+      
         NSLayoutConstraint.activate([
             welcomeLabel.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             welcomeLabel.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor),
@@ -258,6 +266,7 @@ class HelperSignUpViewController: UIViewController {
             failEvent()
         }
     }
+  
     private func failViewSetUp() {
         view.addSubview(failViewID)
         failViewID.layer.borderColor = UIColor.red.cgColor
@@ -397,8 +406,8 @@ class HelperSignUpViewController: UIViewController {
             }
         })
     }
-    
 }
+
 extension HelperSignUpViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField == emailTextField {
@@ -444,6 +453,7 @@ extension HelperSignUpViewController: UITextFieldDelegate {
             }))
         }
     }
+  
     func textFieldDidEndEditing(_ textField: UITextField) {
         UIView.animate(withDuration: 0.3, animations: ({
             self.emailTextField.transform = .identity
@@ -458,6 +468,5 @@ extension HelperSignUpViewController: UITextFieldDelegate {
             self.welcomeLabel.isHidden = false
         }))
     }
-    
 }
 

@@ -32,18 +32,23 @@ class HelperSignUpFinishViewController: UIViewController {
         guard let elderCode = UserDefaults.standard.string(forKey: "elderCode") else { return }
         elderCodeLabel.text = elderCode
         elderCodeLabel.font = .systemFont(ofSize: 32)
+      
         appGuideLabel.numberOfLines = 0
         appGuideLabel.text = "1.\n피보호자 핸드폰에 메세지를 보내 \n앱을 깔고 피보호자 초대코드로 \n회원가입을 하세요"
         appGuideLabel.font = .systemFont(ofSize: 18)
+      
         elderSendMessageBtn = self.btnStyle(title: "피보호자에게 메세지 보내기")
         elderSendMessageBtn.backgroundColor = #colorLiteral(red: 0.3411764801, green: 0.6235294342, blue: 0.1686274558, alpha: 1)
         elderSendMessageBtn.addTarget(self, action: #selector(sendMessageAction), for: .touchUpInside)
+      
         startLabel.numberOfLines = 0
         startLabel.text = "2.\n피보호자 핸드폰에 모든 셋팅이\n끝나셨나요?"
         startLabel.font = .systemFont(ofSize: 18)
+      
         startBtn = self.btnStyle(title: "시작하기")
         startBtn.backgroundColor = UIColor(named: "mypink")
         startBtn.addTarget(self, action: #selector(startAction), for: .touchUpInside)
+      
         [elderCodetitleLabel, elderCodeLabel, appGuideLabel, elderSendMessageBtn, startBtn, startLabel].forEach {
             view.addSubview($0)
         }
@@ -99,6 +104,7 @@ class HelperSignUpFinishViewController: UIViewController {
         }
         
     }
+  
     private func btnStyle(title: String) -> UIButton { // 버튼 스타일 함수
         let button = UIButton()
         button.setTitle(title, for: .normal)
@@ -108,6 +114,7 @@ class HelperSignUpFinishViewController: UIViewController {
         button.shadow()
         return button
     }
+  
     @objc private func sendMessageAction() {
         
         let ref = Database.database().reference()
@@ -124,6 +131,7 @@ class HelperSignUpFinishViewController: UIViewController {
             UIApplication.shared.open(url)
         }
     }
+  
     @objc private func startAction() {
         UIView.animate(withDuration: 2.0) {
             self.activitiyIndicator.isHidden = false
